@@ -1,0 +1,3 @@
+
+# Bloqueia o acesso direto aos arquivos desta pasta
+Require all denied
