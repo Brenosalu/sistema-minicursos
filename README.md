@@ -77,13 +77,8 @@ O `.gitignore` impede seu versionamento normal e o `.htaccess` impede acesso dir
 
 ## 8. Situação do desenvolvimento
 
-A base inicial do projeto está preparada. As páginas de autenticação, minicursos, agendamentos e interface ainda serão integradas pelos respectivos integrantes.
+Parte 1
 
 ## 9. Informações para a entrega final
 
-**A completar pelo grupo:**
-
-- Nomes completos dos cinco integrantes.
-- Lista das funcionalidades implementadas.
-- Capturas de tela das páginas.
-- Usuário e senha de teste, caso seja criada uma conta de demonstração.
+A completar
