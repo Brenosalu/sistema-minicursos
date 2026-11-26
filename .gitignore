@@ -1,0 +1,6 @@
+# Arquivos JSON com dados reais
+/dados/*.json
+
+# Arquivos temporarios
+*.log
+*.tmp
