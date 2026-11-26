@@ -1,0 +1,364 @@
+
+:root {
+  --tinta: #1f2933;
+  --tinta-suave: #52606d;
+  --fundo: #f3f6f7;
+  --superficie: #ffffff;
+  --borda: #d5dde1;
+  --principal: #0e6b6b;
+  --principal-escuro: #094c4c;
+  --destaque: #f2b705;
+  --sucesso: #1b6e3c;
+  --sucesso-fundo: #e3f4ea;
+  --erro: #a4281f;
+  --erro-fundo: #fbe9e7;
+  --raio: 8px;
+  --fonte-texto: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --fonte-titulo: Georgia, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--tinta);
+  background: var(--fundo);
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+}
+
+h1 { font-size: 1.9rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.15rem; }
+
+p { margin: 0 0 1rem; }
+
+a {
+  color: var(--principal);
+}
+
+a:hover {
+  color: var(--principal-escuro);
+}
+
+:focus-visible {
+  outline: 3px solid var(--destaque);
+  outline-offset: 2px;
+}
+
+/* ---------- Estrutura geral ---------- */
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+main.container {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  min-height: 70vh;
+}
+
+/* ---------- Cabeçalho e menu ---------- */
+
+.topo {
+  background: var(--principal);
+  color: #ffffff;
+  border-bottom: 4px solid var(--destaque);
+}
+
+.topo .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.marca {
+  font-family: var(--fonte-titulo);
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--raio);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.menu a.ativo {
+  background: #ffffff;
+  color: var(--principal-escuro);
+  font-weight: 600;
+}
+
+/* ---------- Mensagens de sucesso e erro ---------- */
+
+.msg-sucesso,
+.msg-erro {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+  border-radius: var(--raio);
+  border-left: 5px solid;
+}
+
+.msg-sucesso {
+  background: var(--sucesso-fundo);
+  border-color: var(--sucesso);
+  color: #124a28;
+}
+
+.msg-erro {
+  background: var(--erro-fundo);
+  border-color: var(--erro);
+  color: #7a1d16;
+}
+
+/* ---------- Botões e links de ação ---------- */
+
+.botao {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--principal);
+  border-radius: var(--raio);
+  background: var(--principal);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: var(--principal-escuro);
+  border-color: var(--principal-escuro);
+  color: #ffffff;
+}
+
+.botao-secundario {
+  background: transparent;
+  color: var(--principal);
+}
+
+.botao-secundario:hover {
+  background: var(--principal);
+  color: #ffffff;
+}
+
+.botao-perigo {
+  background: var(--erro);
+  border-color: var(--erro);
+}
+
+.botao-perigo:hover {
+  background: #7a1d16;
+  border-color: #7a1d16;
+}
+
+/* ---------- Formulários ---------- */
+
+.formulario {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+}
+
+.campo {
+  margin-bottom: 1rem;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  font: inherit;
+  color: var(--tinta);
+  background: #ffffff;
+}
+
+.campo textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Campo de senha com botão de mostrar/ocultar (JavaScript) */
+.campo-senha {
+  position: relative;
+}
+
+.campo-senha input {
+  padding-right: 5.5rem;
+}
+
+.campo-senha .alternar-senha {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  padding: 0.25rem 0.6rem;
+  border: 0;
+  border-radius: var(--raio);
+  background: var(--fundo);
+  color: var(--principal-escuro);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+/* Mensagem de validação do JavaScript, logo abaixo do campo */
+.erro-campo {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--erro);
+  font-size: 0.875rem;
+}
+
+.campo input.invalido {
+  border-color: var(--erro);
+}
+
+.formulario .botao {
+  width: 100%;
+}
+
+.formulario .rodape-form {
+  margin: 1rem 0 0;
+  text-align: center;
+}
+
+/* ---------- Lista de minicursos e agendamentos ---------- */
+
+.lista-eventos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.evento {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-top: 4px solid var(--principal);
+  border-radius: var(--raio);
+}
+
+.evento h3 {
+  margin-bottom: 0.25rem;
+}
+
+.evento .info {
+  margin: 0;
+  color: var(--tinta-suave);
+  font-size: 0.95rem;
+}
+
+.evento .acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.detalhes {
+  padding: 1.5rem;
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+}
+
+.vazio {
+  padding: 1.5rem;
+  background: var(--superficie);
+  border: 2px dashed var(--borda);
+  border-radius: var(--raio);
+  text-align: center;
+  color: var(--tinta-suave);
+}
+
+/* ---------- Rodapé ---------- */
+
+.rodape {
+  padding: 1rem 0;
+  background: var(--tinta);
+  color: #d5dde1;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ---------- Telas menores ---------- */
+
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+
+  .topo .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .menu a {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .formulario {
+    padding: 1rem;
+  }
+
+  .lista-eventos {
+    grid-template-columns: 1fr;
+  }
+}
